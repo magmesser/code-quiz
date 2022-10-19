@@ -10,7 +10,33 @@
 </head>
 
 <body>
-   
+    <!-- score -->
+   <div class="container">
+    <div class="score">
+        <span id="user-score">0</span>
+        <span id="total-score">/ 3</span>
+    </div>
+
+    <!-- quiz -->
+    <div class="content" id="question-area">
+        <!-- questions -->
+        <div id="question-text"></div>
+        <!-- answers -->
+        <div class="options">
+            <button class="btn btn-option" id="True">Yes</button>
+            <button class="btn btn-option" id="False">No</button>
+        </div>
+    </div>
+
+    <!-- buttons -->
+    <div class="controls">
+        <button class="btn btn-restart" id="restart">Restart</button>
+        <button class="btn btn-prev" id="prev">Prev</button>
+        <button class="btn btn-next" id="next">Next</button>
+        <button class="btn btn-submit" id="submit">Sumbit</button>
+    </div>
+   </div>
+
     <script src="./script.js"></script>    
 </body>
 </html>

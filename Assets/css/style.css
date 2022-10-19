@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Shadows+Into+Light+Two&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* main colors 
+#94d1e9 - Light blue
+#0687c2 - Dark blue
+ */
+
+
+body {
+    background: rgb(148,209,233);
+    background: radial-gradient(circle, rgba(148,209,233,1) 50%, rgba(6,135,194,1) 100%);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 80vw;
+    max-width: 80%;
+    background-color: white;
+    height: 70vh;
+    box-shadow: 10px 10px 20px 0px #3d3c3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.score {
+    font-size: large;
+    font-weight: bold;
+    color: #0687c2;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.btn {
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 5px 5px 8px -5px #3d3c3d;
+    background: white;
+    border-radius: 4px;
+    padding: 10px;
+    color: #0687c2;
+    margin: 6px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    color: black;
+}
+
+.options {
+    padding: 10px;
+    order: 3;
+}
+
+.controls{
+    padding: 10px;
+    order: 4;
+}
+
+.hide {
+    display: none;
+}
