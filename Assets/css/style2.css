@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Shadows+Into+Light+Two&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family:'Rubik', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --hue-neutral: 197, 66%, 75%;
+    --hue-wrong: 6, 63%, 46%;
+    --hue-correct: 145, 63%, 42%;
+}
+
+/* main colors 
+#94d1e9 ; hsl(197, 66%, 75%) - Light blue
+#0687c2 ; hsl(199, 94%, 39%) - Dark blue
+#C0392B ; hsl(6, 63%, 46%) - wrong
+#27AE60 ; hsl(145, 63%, 42%)- correct
+ */
+
+ body {
+    /* background: rgb(148,209,233);
+    background: radial-gradient(circle, rgba(148,209,233,1) 50%, rgba(6,135,194,1) 100%); */
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue));
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.correct{
+    --hue: var(--hue-correct);
+}
+
+body.wrong{
+    --hue: var(--hue-wrong);
+}
+
+.container {
+    width: 80vw;
+    max-width: 80%;
+    background-color: white;
+    height: 70vh;
+    box-shadow: 10px 10px 20px 0px #3d3c3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Button Styling */
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn {
+    --hue: var(--hue-neutral);
+    background-color: hsl(var(--hue));
+    border: 2px solid #0687c2;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn:hover, #answer-btn:hover {
+    border: 2px solid black;
+}
+
+.btn.correct {
+    --hue: var(--hue-correct);
+    background-color: hsl(var(--hue));
+}
+
+.btn.wrong {
+    --hue: var(--hue-wrong);
+    background-color: hsl(var(--hue));
+}
+
+.start-btn, .next-btn {
+    background-color: #0687c2;
+    border: 2px solid #94d1e9;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
