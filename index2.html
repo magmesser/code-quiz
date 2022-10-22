@@ -2,9 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="css reset" href="./Assets/css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="./Assets/css/style2.css" />
     <title>Code Quiz</title>
@@ -14,9 +14,28 @@
     <!-- main quiz card -->
     <div class="container">
 
+        <!-- introduction text  -->
+        <div id="intro-text">
+            <h1 class="intro">JavaScript Coding Quiz</h1>
+
+            <p class="intro">
+                Want to test your skills in JavaScript?
+                <br /><br />
+                Press the Start button below to begin...but beware of wrong answers.
+                <br /><br />
+                You have 2 minutes. Ready, Go! 
+                <br /><br />
+            </p>
+        </div>
+
+        <div>
+            <p id="timer" class="hide">
+                Timer: <span id="minutes">2</span>:<span id="seconds">00</span>
+            </p>
+        </div>
+
         <!-- adding in the questions container with controls -->
         <div id="question-container" class="hide">
-
             <!-- questions -->
             <div id="question">Question</div>
 
@@ -29,18 +48,39 @@
             </div>
         </div>
 
-        <!-- buttons -->
-        <div class="controls">
-            <button id="start-btn" class="btn start-btn" >Start</button>
-            <button id="next-btn" class="btn next-btn hide" >Next</button>
+        <!-- final score page -->
+        <div class="final-score hide" id="final-score">
+            <h2>You did it!</h2>
+            <p>Your Score: 00</p>
+            <div>
+                <label for="">Enter Initials</label>
+                <input type="text">
+                <button class="btn">Submit</button>
+            </div>
         </div>
 
+        <!-- high score board -->
+        <div class="scoreboard hide" id="scoreboard">
+            <h2>Scoreboard</h2>
+            <ol>
+                <!-- scores will go here -->
+                <li>MM - 22</li>
+                <li>MM - 22</li>
+                <li>MM - 22</li>
+                <li>MM - 22</li>
+                <li>MM - 22</li>
+            </ol>
+        </div>
 
-
+        <!-- buttons -->
+        <div class="controls">
+            <button id="start-btn" class="btn start-btn">Start</button>
+            <button id="next-btn" class="btn next-btn hide">Next</button>
+        </div>
+        
     </div>
 
     <script src="./script2.js"></script>
-
 </body>
 
 </html>

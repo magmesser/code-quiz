@@ -5,15 +5,23 @@
 // Calculate Score
 // Interactive Timer
 
+// variables
+
+const introText = document.getElementById('intro-text');
 const startButton = document.getElementById('start-btn');
+const quizTimerElement = document.getElementById('timer');
 const nextButton = document.getElementById('next-btn');
 const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
+const finalScore = document.getElementById('final-score');
+
 var correctButton = document.getElementsByClassName('correct');
 var wrongButton = document.getElementsByClassName('wrong');
 
-let shuffledQuestions, currentQuestionIndex;
+let shuffledQuestions, currentQuestionIndex, quizTimer;
+
+// events 
 
 startButton.addEventListener('click', startGame);
 nextButton.addEventListener('click', () => {
@@ -25,10 +33,12 @@ nextButton.addEventListener('click', () => {
 
 function startGame() {
     console.log("Started")
-    startButton.classList.add('hide')
+    startButton.classList.add('hide'),
+    introText.classList.add('hide'),
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
+    quizTimerElement.classList.remove('hide')
     setNextQuestion()
 }
 
@@ -69,8 +79,30 @@ function selectAnswer(e) {
     if(shuffledQuestions.length > currentQuestionIndex + 1) {
        nextButton.classList.remove('hide') 
     } else {
-        startButton.innerHTML = "Restart"
-        startButton.classList.remove('hide')
+       showScore();
+    }
+}
+
+// timer function and variables
+
+
+const startingMinutes = .5;
+let time = startingMinutes * 60;
+
+var countdown = setInterval(updateTimer, 1000)
+
+function updateTimer() {
+    const minutes = Math.floor(time / 60);
+    let seconds = time % 60;
+
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    quizTimerElement.innerHTML = `${minutes}:${seconds}`;
+    time--;
+
+    if(time < 0) {
+        clearInterval(countdown);
+        showScore();
     }
     
 }
@@ -88,6 +120,30 @@ function clearStatusClass(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
+
+function showScore(){
+    finalScore.classList.remove('hide')
+    questionContainerElement.classList.add('hide')
+    // startButton.innerHTML = "Restart"
+    // startButton.classList.remove('hide')
+    // startButton.addEventListener('click', startGame)
+    quizTimerElement.classList.add('hide')
+}
+
+function scoreboard(){}
+
+/* next steps:
+1) how to tally the score
+2) enter initials submit button go to ScoreBoard Page 
+3) style Scoreboard page
+4) add a Restart Button on ScoreBoard page
+5) debug timer - it is starting before pressing start 
+6) debug the answer button sizes - various sizes, want uniform
+7) check code online
+8) fix any other bugs
+9) update the read me
+10) submit
+*/
 
 
 // Questions 

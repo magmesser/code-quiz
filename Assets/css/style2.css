@@ -43,6 +43,18 @@ body.wrong{
     --hue: var(--hue-wrong);
 }
 
+.intro, .final-score {
+    margin: 5px;
+    padding: 10px;
+}
+
+#timer {
+    position: relative;
+    top: -150px;
+    color: #0687c2;
+    font-size: x-large;
+}
+
 .container {
     width: 80vw;
     max-width: 80%;
@@ -98,10 +110,27 @@ body.wrong{
     padding: 10px 20px;
 }
 
+.start-btn {
+    position: flex;
+    bottom: 100px;
+}
+
 .controls {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.final-score {
+
+}
+
+.scoreboard {
+    display: block;
+}
+
+.scoreboard ol {
+    overflow: scroll;
 }
 
 .hide {
