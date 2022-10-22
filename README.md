@@ -7,3 +7,5 @@ Referenced codestudio tutorial on how to write a javascript quiz https://www.cod
 Referenced Build A Quizz App with JavaScript YouTube video from Web Dev Simplified. https://www.youtube.com/watch?v=riDzcEQbX6k 
 
 Referenced Simple Countdown Timer with JavaScript YouTube video from Florin Pop. https://www.youtube.com/watch?v=x7WJEmxNlEs
+
+stackoverflow
